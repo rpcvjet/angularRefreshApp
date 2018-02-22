@@ -1,3 +1,37 @@
-<p>
-  login works!
-</p>
+<section class="login-form">
+  
+  <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" #loginInput="ngForm" (ngSubmit)="onSubmit(loginInput)">
+      <h1>Please Log In</h1>
+    <mat-form-field>        
+        <input 
+        type="email"
+        matInput placeholder="email"
+        ngModel name="loginemail"
+        email required
+        #loginemailInput="ngModel"
+        >
+        <mat-hint>Please enter a valid Email</mat-hint>
+        <!-- <mat-error *ngIf="loginemailInput.hasError('required')">Please enter a valid email</mat-error> -->
+        <mat-error *ngIf="!loginemailInput.hasError('required')">Not a valid email.</mat-error>
+        
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Passwords are minimum 6 characters long">
+        <input 
+        type="password"
+        matInput placeholder="password"
+        ngModel name="loginpassword"
+        required
+        minlength="6"
+        #loginPWInput="ngModel"  
+         >     
+         <mat-hint align="end">{{loginPWInput.value?.length}} / 6</mat-hint>
+         <mat-error>Password isn't long enough</mat-error>
+
+        </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginInput.invalid">Login</button>
+  </form>
+
+
+</section>
