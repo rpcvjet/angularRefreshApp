@@ -14,6 +14,8 @@ import { NewTrainingComponent } from './training/new-training/new-training.compo
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './routing/app-routing.module';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavComponent } from './navigation/sidenav/sidenav.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { AppRoutingModule } from './routing/app-routing.module';
     NewTrainingComponent,
     CurrentTrainingComponent,
     WelcomeComponent,
+    HeaderComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
