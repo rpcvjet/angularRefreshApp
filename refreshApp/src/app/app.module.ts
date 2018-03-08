@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 
@@ -16,6 +16,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavComponent } from './navigation/sidenav/sidenav.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
     WelcomeComponent,
     HeaderComponent,
     SidenavComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,7 @@ import { SidenavComponent } from './navigation/sidenav/sidenav.component';
     
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
