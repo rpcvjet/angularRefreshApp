@@ -13,7 +13,7 @@ import { MatButtonModule,
     MatCardModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
 } from '@angular/material';
 
 @NgModule({

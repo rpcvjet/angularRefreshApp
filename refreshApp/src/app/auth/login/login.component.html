@@ -1,36 +1,37 @@
 <section class="login-form">
-  
-  <form fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" #loginInput="ngForm" (ngSubmit)="onSubmit(loginInput)">
+  <!-- This Login Form takes the Reactive approach unllike the signupform -->
+  <!-- FormGroup name has to be the same as you named it in component.ts -->
+  <form fxLayout="column" 
+        fxLayoutGap="10px" 
+        fxLayoutAlign="center center" 
+        [formGroup]="loginForm" 
+        (ngSubmit)="onSubmit()">
+
+
       <h1>Please Log In</h1>
-    <mat-form-field>        
+    <mat-form-field>   
+             <!--bind the input value via the formControlName - same as in component -->
         <input 
         type="email"
-        matInput placeholder="email"
-        ngModel name="loginemail"
-        email required
-        #loginemailInput="ngModel"
+        matInput placeholder="Your email"
+        formControlName="email"
         >
-        <mat-hint>Please enter a valid Email</mat-hint>
-        <!-- <mat-error *ngIf="loginemailInput.hasError('required')">Please enter a valid email</mat-error> -->
-        <mat-error *ngIf="!loginemailInput.hasError('required')">Not a valid email.</mat-error>
+        <mat-hint>Please enter a valid e-mail.</mat-hint>
+        <mat-error>Invalid email.</mat-error>
         
     </mat-form-field>
 
-    <mat-form-field hintLabel="Passwords are minimum 6 characters long">
+    <mat-form-field>
         <input 
         type="password"
-        matInput placeholder="password"
-        ngModel name="loginpassword"
-        required
-        minlength="6"
-        #loginPWInput="ngModel"  
-         >     
-         <mat-hint align="end">{{loginPWInput.value?.length}} / 6</mat-hint>
-         <mat-error>Password isn't long enough</mat-error>
+        matInput placeholder="Your password"
+        formControlName="password">     
+         <mat-hint>Please enter your password.</mat-hint>
+         <mat-error>Missing password</mat-error>
 
         </mat-form-field>
 
-    <button type="submit" mat-raised-button color="primary" [disabled]="loginInput.invalid">Login</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
   </form>
 
 
